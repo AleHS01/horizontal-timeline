@@ -6,7 +6,7 @@
 .timeline-wrapper {
   width: 100%;
   height: 500px;
-  border: 2px dashed rebeccapurple;
+  border: 2px dashed rebeccapurple; /* Temp - just to locate work area */
   position: relative;
 }
 
@@ -31,7 +31,6 @@
 
 .line {
   width: 95%;
-  /* background-image: linear-gradient(to right, var(--bg), var(--acent)); */
   background-image: linear-gradient(to right, #d00000, #dc2f02, #f48c06);
 }
 
@@ -44,15 +43,8 @@
 
 .items-wrapper {
   height: 100%;
-  width: 95%;
-  border: 1px dashed purple;
-  display: flex;
-}
-
-.items-wrapper {
-  height: 100%;
-  width: 98%; /* Ensure this width matches .line-wrapper */
-  border: 1px dashed purple;
+  width: 98%;
+  border: 1px dashed purple; /* Temp - just to locate work area */
   display: flex;
   justify-content: space-between;
   position: absolute;
@@ -69,7 +61,6 @@
   transform: rotate(180deg);
   color: #fff;
   font-size: 2rem;
-  /* background-color: #f48c06; */
   min-height: 150px; /* To make the letter start at same position*/
 }
 
@@ -81,12 +72,3 @@
   transform: translateY(-100px);
   text-align: right;
 }
-
-/* .item:first-child p {
-  position: absolute;
-  left: 0;
-}
-.item:last-child p {
-  position: absolute;
-  right: 0;
-} */
