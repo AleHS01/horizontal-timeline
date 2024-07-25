@@ -25,7 +25,7 @@
 }
 .line,
 .dot {
-  height: 10px;
+  height: 5px;
   border-radius: 2px;
 }
 
@@ -54,9 +54,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  position: relative;
 }
 
-.item p {
+.item .month {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
   color: #fff;
@@ -64,11 +66,31 @@
   min-height: 150px; /* To make the letter start at same position*/
 }
 
-.item:nth-child(even) p {
+.item:nth-child(even) .month {
   transform: rotate(0deg);
   transform: translateY(100px);
 }
-.item:nth-child(odd) p {
+.item:nth-child(odd) .month {
   transform: translateY(-100px);
   text-align: right;
+}
+
+.item .deadlines-bubble {
+  border: 1px dashed blue;
+  height: 50px;
+  width: 90%;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.item .deadlines-bubble .bubble {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
 }
