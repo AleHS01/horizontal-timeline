@@ -31,7 +31,7 @@ const HoverBox = ({ children, content, bgColor }) => {
             "--tooltip-arrow-color": bgColor,
           }}
         >
-          <h5 className="deadline">{content.deadline}</h5>
+          <h4 className="deadline">{content.deadline}</h4>
           <p className="description">{content.description}</p>
         </div>
       )}

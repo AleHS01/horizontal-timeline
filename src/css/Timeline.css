@@ -5,12 +5,9 @@
 
 .timeline-wrapper {
   width: 100%;
-  height: 500px;
-  border: 2px dashed rebeccapurple; /* Temp - just to locate work area */
+  min-height: 500px;
   position: relative;
 }
-
-/* Horizontal Line */
 
 .line-wrapper {
   width: 100%;
@@ -23,6 +20,7 @@
   transform: translate(-50%, -50%);
   justify-content: center;
 }
+
 .line,
 .dot {
   height: 5px;
@@ -39,15 +37,13 @@
   background-color: #f48c06;
 }
 
-/* Items */
-
 .items-wrapper {
   height: 100%;
-  width: 98%;
-  border: 1px dashed purple; /* Temp - just to locate work area */
+  width: 96.8%;
   display: flex;
   justify-content: space-between;
   position: absolute;
+  margin: 0;
 }
 
 .item {
@@ -63,27 +59,33 @@
   transform: rotate(180deg);
   color: #fff;
   font-size: 2rem;
-  min-height: 150px; /* To make the letter start at same position*/
+  min-height: 150px;
 }
 
 .item:nth-child(even) .month {
   transform: rotate(0deg);
   transform: translateY(100px);
 }
+
 .item:nth-child(odd) .month {
   transform: translateY(-100px);
   text-align: right;
 }
 
 .item .deadlines-bubble {
-  border: 1px dashed blue;
+  border-right: 2px dashed white;
   height: 50px;
-  width: 90%;
+  width: 95%;
   position: absolute;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
+  padding: 0 5px;
+}
+
+.item:last-child .deadlines-bubble {
+  border-right: none;
 }
 
 .item .deadlines-bubble .bubble {
@@ -93,4 +95,141 @@
   background-color: #ffffff;
   cursor: pointer;
   box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .timeline-wrapper {
+    height: 800px;
+  }
+
+  .item .month {
+    font-size: 1.5rem;
+  }
+
+  .item .deadlines-bubble {
+    height: 40px;
+  }
+
+  .item .deadlines-bubble .bubble {
+    height: 10px;
+    width: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline-wrapper {
+    height: 120vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 120px;
+  }
+
+  .line-wrapper {
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    width: 8px;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .line {
+    width: 4px;
+    height: 100%;
+    background-image: linear-gradient(to bottom, #d00000, #dc2f02, #f48c06);
+  }
+
+  .dot {
+    display: none;
+  }
+
+  .items-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: 100%;
+    align-items: center;
+    position: relative;
+  }
+
+  .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20px;
+    position: relative;
+    box-sizing: border-box;
+    margin: 20px 0;
+  }
+  .item:first-child {
+    border: none;
+    margin-top: 0;
+  }
+  .item:last-child {
+    padding-bottom: 20px;
+  }
+
+  .item .month {
+    writing-mode: horizontal-tb;
+    transform: rotate(0deg);
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 10px;
+    transform: none;
+    height: 0;
+    margin: 0;
+    min-height: fit-content;
+    min-width: 100px;
+  }
+
+  .item:nth-child(odd) .month {
+    text-align: center;
+    transform: translate(70px, 0);
+  }
+
+  .item:nth-child(even) .month {
+    text-align: center;
+    transform: translate(-70px, 0);
+  }
+
+  .item .deadlines-bubble {
+    width: auto;
+    border: none;
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    position: relative;
+  }
+
+  .item .deadlines-bubble .bubble {
+    margin-bottom: 5px;
+    height: 10px;
+    width: 10px;
+    display: block;
+  }
+
+  .hoverbox-wrapper {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .item .month {
+    font-size: 1rem;
+  }
+
+  .item .deadlines-bubble {
+    padding: 5px 0;
+  }
+
+  .item .deadlines-bubble .bubble {
+    height: 8px;
+    width: 8px;
+  }
 }

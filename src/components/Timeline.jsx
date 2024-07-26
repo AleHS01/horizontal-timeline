@@ -4,14 +4,6 @@ import HoverBox from "./HoverBox";
 import deadline_data from "../deadline";
 
 const Timeline = () => {
-  const months = [
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-    "January",
-  ];
   const bubbles = (items) => {
     return items.map((item, index) => {
       let content = {
@@ -19,8 +11,11 @@ const Timeline = () => {
         description: item.description,
       };
       return (
-        <HoverBox key={index} content={content}>
-          <div className="bubble"></div>
+        <HoverBox key={index} content={content} bgColor={item.bgColor}>
+          <div
+            className="bubble"
+            style={{ backgroundColor: item.bgColor }}
+          ></div>
         </HoverBox>
       );
     });

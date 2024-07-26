@@ -1,6 +1,5 @@
-/* Custom properties */
 :root {
-  --tooltip-text-color: black;
+  --tooltip-text-color: white;
   --tooltip-background-color: white;
   --tooltip-arrow-color: white;
   --tooltip-margin: 20px;
@@ -15,11 +14,9 @@
 .hoverbox {
   position: absolute;
   border-radius: 4px;
-  left: 0; /* Align left side of the tooltip with the left side of the element */
-  top: calc(
-    100% + var(--tooltip-margin)
-  ); /* Position the tooltip at the bottom with margin */
-  transform: translateX(0); /* Remove horizontal centering */
+  left: 0;
+  top: calc(100% + var(--tooltip-margin));
+  transform: translateX(0);
   padding: 6px;
   color: var(--tooltip-text-color);
   background: var(--tooltip-background-color);
@@ -33,80 +30,26 @@
 .hoverbox::before {
   content: " ";
   position: absolute;
-  left: var(--tooltip-arrow-size); /* Align the arrow to the left side */
-  bottom: 100%; /* Position the arrow at the top of the tooltip */
+  left: var(--tooltip-arrow-size);
+  bottom: 100%;
   border: solid transparent;
   height: 0;
   width: 0;
   pointer-events: none;
   border-width: var(--tooltip-arrow-size);
-  border-bottom-color: var(--tooltip-arrow-color); /* Arrow pointing up */
+  border-bottom-color: var(--tooltip-arrow-color);
+}
+
+.hoverbox .deadline {
+  margin: 0 0 5px;
+  text-decoration: underline;
 }
 
 .hoverbox .description {
-  font-size: 10px;
+  font-size: 0.8rem;
 }
-
-/* 
-
-/* Custom properties 
-:root {
-    --tooltip-text-color: black;
-    --tooltip-background-color: white;
-    --tooltip-arrow-color: white;
-    --tooltip-margin: 20px;
-    --tooltip-arrow-size: 6px;
-  }
-  
+@media (max-width: 768px) {
   .hoverbox-wrapper {
-    display: inline-block;
-    position: relative;
+    display: block;
   }
-  
-  .hoverbox {
-    position: absolute;
-    border-radius: 4px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 6px;
-    color: var(--tooltip-text-color);
-    background: var(--tooltip-background-color);
-    font-size: 14px;
-    line-height: 1;
-    z-index: 50;
-    /* white-space: nowrap; 
-    min-width: 140px;
-    padding: 5px;
-  }
-  
-  .hoverbox::before {
-    content: " ";
-    left: 50%;
-    border: solid transparent;
-    height: 0;
-    width: 0;
-    position: absolute;
-    pointer-events: none;
-    border-width: var(--tooltip-arrow-size);
-    margin-left: calc(var(--tooltip-arrow-size) * -1);
-  }
-  
-  .hoverbox.left {
-    left: auto;
-    right: calc(100% + var(--tooltip-margin));
-    top: 50%;
-    transform: translateX(0) translateY(-50%);
-  }
-  
-  .hoverbox.left::before {
-    left: auto;
-    right: calc(var(--tooltip-arrow-size) * -2);
-    top: 50%;
-    transform: translateX(0) translateY(-50%);
-    border-left-color: var(--tooltip-arrow-color);
-  }
-  
-  .hoverbox .description {
-    font-size: 10px;
-  }
-   */
+}
