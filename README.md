@@ -1,4 +1,4 @@
-# Horizontal Timeline
+# Horizontal Timeline - College-Space
 
 This is the Timeline Feature for the College-Space project on BuildSpace. I contributed the Timeline Feature and the [Landing page](https://github.com/AleHS01/college-space/tree/main)
 
